@@ -179,9 +179,6 @@ func (h highestEarningPoolImpl) GetUniswapV3HighestEarningPoolAddressAPIAs(block
 			earningShare = totalLiqPrvdrEarningsUSD
 		}
 
-		// possible race condition here with the load and store, to fix this race condition I can use a mutex
-		// but it will slow it down a lot. Because of how big the queries are, I have chosen to prefer speed
-		// and accept the low risk of the race condition for the time being
 		earningsPerUSDLoaded := earningsPerUSD.Load()
 		if earningShare > earningsPerUSDLoaded {
 			earningsPerUSD.Store(earningShare)
