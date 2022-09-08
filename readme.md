@@ -59,8 +59,6 @@ highestearningpool/highestearningpool_test.go uses the mock MockHTTPClientImpl I
 
 
 ### other notes:
-Spent time finding which APIs to use, what the formulas are and understanding how it all works
-
 Uses UTC time
 
 if you have connection error you may need to throttle, set a higher blocks sliding window e.g. --noofblocksslidingwindow 100. Try to tinker with the setting so you download at your broadband bandwidth limit, mine is about 70Mbps
@@ -78,6 +76,3 @@ should be using decimal for currency instead of float. Go does not have decimal 
 use golangci-lint to enforce go standards
 
 There is possible a possible race condition with the load and store for earningsPerUSDLeader, to fix this race condition I can use a mutex but it will slow things down a lot. Because of how big the queries are, I have chosen to prefer speed and accept the low risk of the race condition for the time being
-
-
-Please let me know if something doesn't work thanks!
