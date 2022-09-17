@@ -31,7 +31,7 @@ And for the exe:
 
 --noofblocksslidingwindow is the sliding window when searching the blocks for pools, the lower this number the more connections and go routines spawn. 1 is the fastest but you can get connection errors if the search is too large. The example commands above all download at about 60Mbps. If you have too many connection problem increase this number
 
---minlockedusd finds locked volume pools that are more than 1 dollar. If you set this to 0.0 it finds pools which are less than 1 dollar and because earnings are reported per USD, I report the earnings per USD as whole earnings pot (fee X volumeUSD)
+--minlockedusd finds the minimum locked volume pools in USD. If you set this to 0.0 it finds pools which are less than 1 dollar and because earnings are reported per 1 USD, I report the earnings per USD as whole earnings pot (fee X volumeUSD)
 
 
 ### formula:
