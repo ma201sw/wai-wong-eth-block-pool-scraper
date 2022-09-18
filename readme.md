@@ -34,7 +34,7 @@ And for the exe:
 --minlockedusd finds the minimum locked volume pools in USD. If you set this to 0.0 it finds pools which are less than 1 dollar and because earnings are reported per 1 USD, I report the earnings per USD as whole earnings pot (fee X volumeUSD)
 
 
-### formula:
+### Formula:
 I use the Ethereum Blocks API schema item blocks to get the eth blocks and Uniswap V3 Subgraph schema item pools to get the pools from the blocks. I use the formula to calculate earnings per USD for a pool ((feeTier / 1000000) * volumeUSD) * (1/totalValueLockedUSD) I assume totalValueLockedUSD is the liquidity pool provided in dollars amount
 
 (feeTier / 1000000) * volumeUSD) calculates the total share of earnings to be shared across liquidty providers. (1/totalValueLockedUSD) is your proportionate share if you invest 1 dollar
@@ -42,7 +42,7 @@ I use the Ethereum Blocks API schema item blocks to get the eth blocks and Unisw
 note if the totalValueLockedUSD is less than 1 dollars I make the earnings per USD the whole shared liquidity provider earnings pot (feeTier / 1000000) * volumeUSD), this also only happens if you put the argument --minlockedusd 0.0
 
 
-### packages, structs and interfaces:
+### Packages, structs and interfaces:
 package cmdhighestearningpool contains the entrypoint when running the program, I use a bunch of go routines to call the APIs. This uses the highestearningpool.New(myHTTPClient MyHTTPClientSrv) which takes in a httpclient for dependency injection, this httpclient can use a real one or a mock one. You can have a struct with more dependencies and inject that to be able to mock more libraries and methods
 
 package common contains type errors, I avoid sentinel errors
