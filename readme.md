@@ -47,7 +47,7 @@ package cmdhighestearningpool contains the entrypoint when running the program, 
 
 package common contains type errors, I avoid sentinel errors
 
-package constant contains constants and config
+package constant contains constants, API endpoints and config
 
 package domain contains the structs for marshaling and unmarshaling eth blocks and pools
 
