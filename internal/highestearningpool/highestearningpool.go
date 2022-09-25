@@ -179,6 +179,7 @@ func (h highestEarningPoolImpl) GetUniswapV3HighestEarningPoolAddressAPIAs(block
 			earningShare = totalLiqPrvdrEarningsUSD
 		}
 
+		// todo to change to an atomic compare and swap
 		earningsPerUSDLoaded := earningsPerUSD.Load()
 		if earningShare > earningsPerUSDLoaded {
 			earningsPerUSD.Store(earningShare)
